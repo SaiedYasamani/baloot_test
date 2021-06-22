@@ -1,5 +1,6 @@
 package com.balot.yasamani
 
+import com.balot.yasamani.di.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.support.DaggerApplication
 
@@ -10,7 +11,7 @@ class App: DaggerApplication() {
     }
 
     override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
-        TODO("Not yet implemented")
+        return DaggerAppComponent.builder().application(this).build()
     }
 
 }
